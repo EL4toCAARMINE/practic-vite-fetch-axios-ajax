@@ -1,0 +1,38 @@
+.movieComponentContainer {
+  height: 350px;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px #acacac;
+  margin: 10px;
+  transition: all 0.5s ease;
+  transform-origin: top;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    transform: perspective(1500px) rotateX(5deg) rotateY(15deg)
+      scale(1.01, 0.95);
+    &::after{
+      bottom: -350px;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -500px;
+    left: -350px;
+    width: 500px;
+    height: 500px;
+    background-color: rgba(153, 153, 153, 0.3);
+    rotate: 30deg;
+    transition: all 0.5s ease;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
